@@ -40,8 +40,8 @@ function App() {
 
       }
     }
-    consultarAPI();
-
+    consultarAPI(); 
+// eslint-disable-next-line
   }, [consultar]);
 
   let componente;
