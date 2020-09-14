@@ -15,9 +15,18 @@ const {ciudad, pais} = busqueda;
 
 useEffect(() => {
   const consultarAPI = async () => {
-    // http://api.openweathermap.org/data/2.5/weather?q=Buenos%20Aires,ar&APPID=0bdb1e207c717c85595c5fefa172e13d
+    if (consultar) {
+
+      const appId = '0bdb1e207c717c85595c5fefa172e13d';
+      const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&APPID=${appId}`
+  
+      const respuesta = await fetch(url);
+      const resultado = await respuesta.json();
+  
+      console.log(resultado)
+    }
   }
-  consultarAPI;
+  consultarAPI();
 
 }, [consultar]);
 
